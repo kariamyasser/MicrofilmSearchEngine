@@ -1,7 +1,7 @@
 
 exports.dbConfig = {
     user: "sa",
-    password:"K01141913988k",
+    password:"",
     server:"DESKTOP-921T64N",
     options: {
         trustedConnection: true
