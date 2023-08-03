@@ -1,0 +1,47 @@
+
+  <div class="col-md-12 float-container">
+      <div class ="col-md-6 float-child">
+      
+          
+              <div class="form-group rtl">
+                  <label  class="header-title" style="color: rgb(56, 74, 82);">الاسم</label>
+                  <input type="text" class="form-control" value={{userData.username}} id ="usernameInputEditor" />
+  
+              </div>
+              <div class="form-group rtl">
+                  <label for="password" class="header-title" style="color: rgb(56, 74, 82);" >كلمة السر</label>
+                  <input type="password" class="form-control" id ="passwordInputEditor" />
+              </div>
+              <div *ngIf="userData.usertype === 'admin'" class="form-group rtl">
+                  <label style="padding-bottom: 5px; color: rgb(56, 74, 82);" for="usertype" class="header-title" >نوع المستخدم</label>
+                  <div style="display: flex;">
+                      <label  style="padding-top: 7px;">متحكم</label>
+                      <input [checked]="userData.usertype === 'admin'" name = "usertype" style="transform: scale(0.5);" (change)="isAdmin = true; isClient = false;" type="radio" class="form-control" value = "admin"/>
+                      <label style="padding-top: 7px;">مستخدم</label>
+                      <input type="radio"  name = "usertype" style="transform: scale(0.5);" [checked]="userData.usertype === 'client'" (change)="isAdmin = false; isClient = true;" class="form-control" value = "client" />
+                  </div>
+              </div>
+      </div>
+      <div class="col-md-6 float-child">
+          <div class="rtl">
+              <label class="header-title" style="color: rgb(56, 74, 82);"> المشاريع</label>
+          
+          <ul class="no-bullets">
+              <li style="padding-bottom: 5px; font-size: medium;" *ngFor="let item of projectsChecklist">
+                <input type="checkbox" [checked]="item.isChecked"  (change)="changeSelection(item.id)">
+                <label  style="padding-right: 15px;">{{item.label}}</label>
+              </li>
+          </ul>
+      
+      </div>
+      </div>
+
+      <div class="form-group rtl">
+        <button [disabled]="loading" (click)="editUser()" class="btn btn-primary">تعديل</button>
+        <img *ngIf="loading"
+            src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    </div>
+      </div>
+
+  
+  

@@ -1,0 +1,16 @@
+.rtl{
+    direction: rtl;
+    text-align: right;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
+
+.invalid-feedback{
+    display: block !important;
+    text-align: right !important;
+    font-size: medium;
+}

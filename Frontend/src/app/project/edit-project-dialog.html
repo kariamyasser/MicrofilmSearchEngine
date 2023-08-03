@@ -1,0 +1,17 @@
+<mat-dialog-content class="mat-typography">
+    <div class="col-md-12 float-container">
+        <div class="rtl">
+            <ul class="no-bullets">
+                <li style="padding-bottom: 10px; font-size: medium;" *ngFor="let item of fields">
+                    <label class="header-title" style="color: turquoise;">{{item.FIELD_NAME_AR}}</label>
+                    <input type="text" class="form-control" value={{fieldsData[item.FIELD_NAME_ENG]}} id="{{item.FIELD_NAME_ENG}}-editField" />
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button mat-button [mat-dialog-close]="false">إلغاء</button>
+    <button mat-button [mat-dialog-close]="true" (click)="editProject()" cdkFocusInitial>تعديل</button>
+</mat-dialog-actions>

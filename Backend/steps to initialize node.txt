@@ -1,0 +1,9 @@
+npm init --yes
+npm install
+npm install mssql
+npm install tedious
+npm install -g express-generator
+
+add folder of images in Public
+
+node app.js

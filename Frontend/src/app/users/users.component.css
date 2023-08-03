@@ -1,0 +1,73 @@
+:host /deep/ .ag-filter-select {
+    display: none;
+}
+
+:host /deep/ .ag-filter-condition {
+    display: none;
+}
+
+:host /deep/ .ag-header-icon.ag-header-cell-menu-button {
+    opacity: 1 !important;
+}
+
+:host /deep/ .ag-icon.ag-icon-desc{
+    color: red;
+    transform: scale(1.3);
+}
+:host /deep/ .ag-icon.ag-icon-asc{
+    color: green;
+    transform: scale(1.3);
+}
+
+:host /deep/ ag-grid-angular{
+    font-size: 15px !important;
+}
+
+:host /deep/ .ag-icon.ag-icon-filter{
+    color: blue;
+    float: left;
+    transform: scale(1.3);
+}
+
+
+:host /deep/ .ag-filter-filter{
+    background-color: white;
+    color: black;
+}
+
+:host /deep/  .ag-header-row{
+    font-size: 18px !important;
+}
+
+
+
+
+.rtl{
+    direction: rtl;
+    text-align: right;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
+
+  .float-container {
+    padding: 20px;
+}
+
+.float-child {
+    float: left;
+    padding: 20px;
+}  
+ul.no-bullets {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+  }
+
+.header-title{
+    font-size: large;
+    font-weight: bold;
+}

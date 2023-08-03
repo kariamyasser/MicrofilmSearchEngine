@@ -1,0 +1,21 @@
+<img src="assets/Images/search_engine_icon.png" class="center">
+<h2 class="rtl" style ="padding-bottom: 20px;">تحديد المسار الخاص بالمشاريع</h2>
+
+
+
+<div class="form-group">
+
+  <input type="text"  class="form-control" (keyup)="onDataEntered($event)"/>
+
+  <div *ngIf="isError" class="invalid-feedback">
+      <div *ngIf="isError">يجب إدخال المسار </div>
+  </div>
+
+  <div *ngIf="isSuccess" class="invalid-feedback">
+    <div *ngIf="isSuccess" style="color: green !important;">تم الحفظ بنجاح </div>
+</div>
+</div>
+
+<div class="form-group">
+  <button (click)="submitPath()" class="btn btn-primary" style ="margin-left: auto; margin-right: auto; display: block;">حفظ</button>
+</div>

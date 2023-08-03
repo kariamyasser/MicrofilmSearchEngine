@@ -1,0 +1,15 @@
+<img src="assets/Images/search_engine_icon.png" class="center">
+<h2 class="rtl" style="padding-bottom: 20px;">اختيار الجهة</h2>
+
+
+
+<div class="form-group rtl">
+    <select name="project" class="form-control" (change)="onProjectSelect($event)">
+        <option *ngFor="let opt of projects" [value]="opt">{{opt.nameAR}}</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <button [disabled]="currentProject === ''" (click)="goToProject()" class="btn btn-primary"
+        style="margin-left: auto; margin-right: auto; display: block;">دخول</button>
+</div>

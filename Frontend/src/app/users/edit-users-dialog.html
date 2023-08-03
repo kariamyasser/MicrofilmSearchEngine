@@ -1,0 +1,45 @@
+<mat-dialog-content class="mat-typography">  
+<div class="col-md-12 float-container">
+    <div class ="col-md-6 float-child">
+    
+        
+            <div class="form-group rtl">
+                <label  class="header-title" style="color: turquoise;">الاسم</label>
+                <input type="text" class="form-control" value={{userData.username}} id ="usernameInputEditor" />
+
+            </div>
+            <div class="form-group rtl">
+                <label for="password" class="header-title" style="color: turquoise;" >كلمة السر</label>
+                <input type="password" class="form-control" id ="passwordInputEditor" />
+            </div>
+            <div class="form-group rtl">
+                <label style="padding-bottom: 5px; color: turquoise;" for="usertype" class="header-title" >نوع المستخدم</label>
+                <div style="display: flex;">
+                    <label  style="padding-top: 7px;">متحكم</label>
+                    <input [checked]="userData.usertype === 'admin'" name = "usertype" style="transform: scale(0.5);" (change)="isAdmin = true; isClient = false;" type="radio" class="form-control" value = "admin"/>
+                    <label style="padding-top: 7px;">مستخدم</label>
+                    <input type="radio"  name = "usertype" style="transform: scale(0.5);" [checked]="userData.usertype === 'client'" (change)="isAdmin = false; isClient = true;" class="form-control" value = "client" />
+                </div>
+            </div>
+    </div>
+    <div class="col-md-6 float-child">
+        <div class="rtl">
+            <label class="header-title" style="color: turquoise;"> المشاريع</label>
+        
+        <ul class="no-bullets">
+            <li style="padding-bottom: 5px; font-size: medium;" *ngFor="let item of projectsChecklist">
+              <input type="checkbox" [checked]="item.isChecked"  (change)="changeSelection(item.id)">
+              <label  style="padding-right: 15px;">{{item.label}}</label>
+            </li>
+        </ul>
+    
+    </div>
+    </div>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-button [mat-dialog-close]="false">إلغاء</button>
+  <button mat-button [mat-dialog-close]="true" (click)="editUser()" cdkFocusInitial>تعديل</button>
+</mat-dialog-actions>
+

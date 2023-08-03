@@ -1,0 +1,15 @@
+ <h2 class="rtl" style ="padding-bottom: 20px;">المستخدمين</h2>
+    <ag-grid-angular
+    style="width: 100%; height: 700px;"
+    enableRtl= "true"
+    class="ag-theme-balham-dark"
+    [rowData]="rowData"
+    [defaultColDef]="defaultColDef"
+    [columnDefs]="columnDefs"
+    [suppressHorizontalScroll]= "false"
+    (gridReady)="onGridReady($event)"
+    (columnResized)="onColumnResized($event)"
+    rowSelection="multiple"
+    (cellClicked)="onCellClicked($event)"
+>
+</ag-grid-angular>

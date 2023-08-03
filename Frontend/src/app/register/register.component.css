@@ -1,0 +1,29 @@
+.rtl{
+    direction: rtl;
+    text-align: right;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
+
+  .float-container {
+    padding: 20px;
+}
+
+.float-child {
+    float: left;
+    padding: 20px;
+}  
+ul.no-bullets {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+  }
+
+.header-title{
+    font-size: large;
+    font-weight: bold;
+}

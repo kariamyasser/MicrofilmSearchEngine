@@ -1,0 +1,50 @@
+
+ <div class="action-toolbar">
+
+
+ <h1 class="rtl" style ="padding-bottom: 20px;margin-top: -50px; color: cadetblue"><i class="fa fa-file-video-o" style ="color: grey; padding-left: 20px;" ></i>{{projectName.nameAR}} </h1>
+
+ <div  class="rtl" style="display:flex;">
+
+    <h5 *ngIf = "imageList && imageList.length" style ="color:crimson;margin-top: -10px;margin-bottom: 15px;margin-right: 56px;">اجمالي عدد الملفات: {{imageList.length}}</h5>
+  </div>
+
+  <div>
+      <div class="rtl">
+    <button (click)="saveImages()">حفظ الصور</button>
+    <button (click)="saveAsPDF()"> حفظ PDF</button>
+    <button (click)="printImages()">طباعة</button>
+    <button (click)="selectAllImages()">اختيار الكل</button>
+    <button (click)="deselectAllImages()">الغاء الاختيار</button>
+</div>
+    <div class="input-container rtl">
+      <i class="fa fa-search icon"></i>
+      <input class="input-field" type="text" placeholder="بحث" name="search-img" (keyup)="search($event.target.value)">
+    </div>
+  </div>
+
+
+  
+</div>
+<div class="row">
+  <div class="column" *ngFor="let item of shownImages">
+    <div>
+      <a (click)="item.selected = !item.selected" download>
+        <img src="{{item.srcPath}}" id="item.imgName"  loading="lazy"> </a>
+      <div class="img-div">
+        <label>{{item.imgName}}</label>
+        <input class="img-checkbox" [checked]="item.selected" type="checkbox">
+      </div>
+
+    </div>
+  </div>
+  <div class="column">
+    
+  </div>
+  <div class="column">
+    
+  </div>
+  <div class="column">
+  
+  </div>
+</div>
